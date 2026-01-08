@@ -1,0 +1,16 @@
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, $primaryBlue, $primaryPurple);
+
+  .header-img {
+    width: 81px;
+    height: 81px;
+    padding: 24px;
+  }
+
+  .header-title {
+    font-size: 33px;
+    font-weight: bold;
+  }
+}
