@@ -2,32 +2,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 type CardSwipedInfoProps = {
-  friend: boolean;
+  label: string;
+  count: number;
 };
 
-function CardSwipedInfo({ friend }: CardSwipedInfoProps) {
+function CardSwipedInfo({ label, count }: CardSwipedInfoProps) {
   return (
     <div className="session-info">
-      {friend ? (
-        <>
-          <div className="image">
-            {" "}
-            <FontAwesomeIcon icon={faUser} />
-          </div>
-          <div className="info-wrapper">
-            <div className="session-info-name">Friend</div>
-            <div className="session-info-text">3 cards swiped</div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="image">You</div>
-          <div className="info-wrapper">
-            <div className="session-info-name">You</div>
-            <div className="session-info-text">4 cards swiped</div>
-          </div>
-        </>
-      )}
+      <div className="image">
+        {label === "Friend" ? (
+          <FontAwesomeIcon icon={faUser} />
+        ) : (
+          "You"
+        )}
+      </div>
+      <div className="info-wrapper">
+        <div className="session-info-name">{label}</div>
+        <div className="session-info-text">
+          {count} {count === 1 ? "card" : "cards"} swiped
+        </div>
+      </div>
     </div>
   );
 }

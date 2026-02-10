@@ -1,9 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHourglass } from "@fortawesome/free-solid-svg-icons";
 
-function CreateSession() {
-  const link = "finder.app/join/ABC12XYZ";
-	const code = "ABC12XYZ";
+type CreateSessionProps = {
+  sessionId: string;
+  joinCode: string;
+  participantCount: number;
+};
+
+function CreateSession({
+  sessionId,
+  joinCode,
+  participantCount,
+}: CreateSessionProps) {
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+  const link = `${baseUrl}/join/${joinCode}`;
 
   const copyLink = () => {
     navigator.clipboard.writeText(link);
@@ -12,17 +22,18 @@ function CreateSession() {
   return (
     <div>
       <h2>Share with your friend</h2>
-      <p className="loader">
+      <div className="loader">
         <div className="hourglass-container">
           <FontAwesomeIcon icon={faHourglass} />
         </div>
         Waiting for friend...
-      </p>
-      <div className="code-wrapper">{code}</div>
+        {participantCount >= 2 && " Someone joined!"}
+      </div>
+      <div className="code-wrapper">{joinCode}</div>
       <p>or send this link:</p>
       <div className="link">{link}</div>
       <div className="btn-wrapper">
-        <button className="btn primary" onClick={() => copyLink()}>
+        <button className="btn primary" onClick={copyLink} type="button">
           Copy Link
         </button>
       </div>

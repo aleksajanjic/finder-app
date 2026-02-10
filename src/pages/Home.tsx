@@ -16,7 +16,9 @@ function Home() {
         <button className="btn primary" onClick={() => navigate("/session")}>
           Start New Session
         </button>
-        <button className="btn secondary">Join with Code</button>
+        <button className="btn secondary" onClick={() => navigate("/join")}>
+          Join with Code
+        </button>
       </div>
     </div>
   );
