@@ -1,16 +1,27 @@
 .header-wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: linear-gradient(90deg, $primaryBlue, $primaryPurple);
+  padding-right: 50px;
 
-  .header-img {
-    width: 81px;
-    height: 81px;
-    padding: 24px;
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+
+    .header-img {
+      width: 81px;
+      height: 81px;
+      padding: 24px;
+    }
+
+    .header-title {
+      font-size: 33px;
+      font-weight: bold;
+    }
   }
 
-  .header-title {
-    font-size: 33px;
-    font-weight: bold;
+  .session-info{
+    font-size: 18px;
   }
 }

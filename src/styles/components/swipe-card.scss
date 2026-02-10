@@ -1,0 +1,63 @@
+.cards-wrapper {
+  color: $almostBlack;
+  width: 530px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+  .swipe-card {
+    position: relative;
+    width: 100%;
+    height: inherit;
+
+    .restaurant-card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      cursor: grab;
+      transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease;
+
+      &.like {
+        transform: translateX(120%) rotate(14deg);
+        opacity: 0;
+      }
+
+      &.dislike {
+        transform: translateX(-120%) rotate(-14deg);
+        opacity: 0;
+      }
+
+      .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60%;
+        background: linear-gradient(135deg, $pink, $red);
+        border-radius: 20px 20px 0 0;
+        font-size: 150px;
+      }
+
+      .text-wrapper {
+        padding: 0 24px;
+        height: 140px;
+        overflow-y: auto;
+        padding: 24px;
+
+        h4,
+        p {
+          margin: 0;
+        }
+
+        p+p {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

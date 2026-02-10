@@ -1,1 +1,78 @@
-/* buttons */
+.btn {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 10px;
+
+  &.primary {
+    background: linear-gradient(90deg, $primaryBlue, $primaryPurple);
+    color: white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -75%;
+      width: 50%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(25deg);
+      transition: all 0.8s ease;
+    }
+
+    &:hover::before {
+      left: 125%;
+    }
+  }
+
+  &.secondary {
+    background-color: white;
+    color: $primaryBlue;
+    border: 3px solid $primaryBlue;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transform-origin: center center;
+  }
+}
+
+.buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+
+  button {
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+
+    }
+
+    &.like {
+      background-color: $green;
+    }
+
+    &.dislike {
+      background-color: $red;
+    }
+  }
+}

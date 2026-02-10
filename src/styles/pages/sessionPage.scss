@@ -1,0 +1,76 @@
+.session-page-wrapper {
+  background-color: $sessionBackground;
+  color: $almostBlack;
+  padding: 20px 15px;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $yellow;
+    padding: 8px 24px;
+    border-radius: 20px;
+    margin: 30px 0;
+    color: $almostBlack;
+    font-weight: bold;
+
+    .hourglass-container svg {
+      font-size: 24px;
+      animation: step-rotate 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes step-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .code-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed $primaryBlue;
+    border-radius: 8px;
+    font-size: 33px;
+    color: $primaryBlue;
+    font-weight: bold;
+    background-color: white;
+    padding: 24px;
+    letter-spacing: 2px;
+  }
+
+  .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    transition: transform 0.2s ease, background 0.2s ease;
+    margin-top: 20px;
+  }
+
+}

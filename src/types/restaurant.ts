@@ -6,5 +6,5 @@ export interface Restaurant {
   price_range: string;
   image_url: string;
   location: string;
-  rating: string;
+  rating: number;
 }

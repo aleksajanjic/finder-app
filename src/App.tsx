@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import Header from "../src/components/layout/Header.tsx";
 import Footer from "../src/components/layout/Footer.tsx";
 import Home from "./pages/Home.tsx";
+import SessionPage from "./pages/SessionPage.tsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/session" element={<SessionPage />} />
           </Routes>
         </BrowserRouter>
       </div>
