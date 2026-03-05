@@ -2,7 +2,7 @@ import type { Restaurant } from "../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faHeart, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "../atoms/ProgressBar";
 import { addSwipe, getSwipes, getMatches } from "../../services/swipeApi";
 import type { Match } from "../../types";
 

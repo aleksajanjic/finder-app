@@ -1,8 +1,8 @@
 import "@/styles/main.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import Header from "../src/components/layout/Header.tsx";
-import Footer from "../src/components/layout/Footer.tsx";
+import Header from "../src/components/organisms/Header.tsx";
+import Footer from "../src/components/organisms/Footer.tsx";
 import Home from "./pages/Home.tsx";
 import JoinPage from "./pages/JoinPage.tsx";
 import SessionPage from "./pages/SessionPage.tsx";

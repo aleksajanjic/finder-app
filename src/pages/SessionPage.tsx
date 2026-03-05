@@ -1,8 +1,8 @@
-import CreateSession from "../components/session/CreateSession";
+import CreateSession from "../components/organisms/CreateSession";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import SwipeCard from "../components/swiping/SwipeCard";
-import SessionInfoCard from "../components/session/SessionInfoCard";
+import SwipeCard from "../components/organisms/SwipeCard";
+import SessionInfoCard from "../components/organisms/SessionInfoCard";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { getDeviceId } from "../utils/deviceId";
 import {
@@ -79,7 +79,7 @@ function SessionPage() {
 	const waitingForFriend = isCreator && participants.length === 1;
 	const showSwiping = participants.length >= 2 || !isCreator;
 
-	console.log(sessionId, session)
+	console.log(sessionId, session);
 
 	if (creating || (!sessionId && !session)) {
 		return (
