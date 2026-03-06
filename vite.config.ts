@@ -6,20 +6,21 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `
+	base: "/finder-app/",
+	plugins: [react()],
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "src"),
+		},
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `
           @use "@/styles/variables" as *;
           @use "@/styles/mixins" as *;
         `,
-      },
-    },
-  },
+			},
+		},
+	},
 });
