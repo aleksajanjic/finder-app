@@ -76,10 +76,8 @@ function SessionPage() {
 	}, [sessionId, session]);
 
 	const isCreator = session?.creator_device_id === deviceId;
-	const waitingForFriend = isCreator && participants.length === 1;
+	// const waitingForFriend = isCreator && participants.length === 1;
 	const showSwiping = participants.length >= 2 || !isCreator;
-
-	console.log(sessionId, session);
 
 	if (creating || (!sessionId && !session)) {
 		return (

@@ -52,7 +52,7 @@ export async function getSessionByCode(
 	return data as Session | null;
 }
 
-export async function getSession(sessionId: string): Promise<Session | null> {
+export async function getSession(sessionId: string | undefined): Promise<Session | null> {
 	const { data, error } = await supabase
 		.from("sessions")
 		.select("*")
@@ -81,7 +81,7 @@ export async function joinSession(
 }
 
 export async function getParticipants(
-	sessionId: string,
+	sessionId: string | undefined,
 ): Promise<SessionParticipant[]> {
 	const { data, error } = await supabase
 		.from("session_participants")
@@ -94,7 +94,7 @@ export async function getParticipants(
 }
 
 export function subscribeParticipants(
-	sessionId: string,
+	sessionId: string | undefined,
 	onUpdate: (participants: SessionParticipant[]) => void,
 ) {
 	const channel = supabase
@@ -120,7 +120,7 @@ export function subscribeParticipants(
 }
 
 export async function updateSessionStatus(
-	sessionId: string,
+	sessionId: string | undefined,
 	status: "waiting" | "active" | "completed",
 ): Promise<void> {
 	const { error } = await supabase

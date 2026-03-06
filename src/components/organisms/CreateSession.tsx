@@ -8,7 +8,7 @@ type CreateSessionProps = {
 };
 
 function CreateSession({
-	sessionId,
+	// sessionId,
 	joinCode,
 	participantCount,
 }: CreateSessionProps) {

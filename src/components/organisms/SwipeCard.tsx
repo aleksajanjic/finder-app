@@ -15,6 +15,7 @@ type SwipeCardProps = {
 
 function SwipeCard({ sessionId, deviceId, restaurants, width }: SwipeCardProps) {
 	const [index, setIndex] = useState(0);
+	// @ts-ignore
 	const [likedRestaurants, setLikedRestaurants] = useState<Restaurant[]>([]);
 	const [action, setAction] = useState<"like" | "dislike" | null>(null);
 	const [matches, setMatches] = useState<Restaurant[] | null>(null);
